@@ -12,6 +12,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 
+<div id="overlay" onclick="abrirInvitacion()">
+    <div class="envelope">
+        💌 Toca para abrir tu invitación
+    </div>
+</div>
+    
 <body>
 
     <header>
@@ -158,14 +164,19 @@
 
     <!-- Wedding music -->
     <audio id="music" loop>
-        <source src="./assets/audio/Aprender A Quererte (Piano Version).mp3" type="audio/mpeg">
+        <source src="assets/audio/Aprender A Quererte (Piano Version).mp3" type="audio/mpeg">
     </audio>
 
-    <button onclick="playMusic()">🔊 Activar música</button>
-
     <script>
-        function playMusic() {
-            document.getElementById("music").play();
+        function abrirInvitacion() {
+            const overlay = document.getElementById("overlay");
+            const music = document.getElementById("music");
+
+            overlay.style.display = "none";
+
+            music.play().catch(error => {
+                console.log("Error al reproducir:", error);
+            });
         }
     </script>
 
