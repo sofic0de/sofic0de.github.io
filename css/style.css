@@ -6,6 +6,12 @@
     --lavender: #F3F0F7;
   }
 
+footer a {
+    color: inherit;          /* mantiene el color del footer */
+    text-decoration: none;   /* quita el subrayado */
+    font: inherit;           /* mantiene la fuente */
+}
+
   body {
     margin: 0;
     padding: 0;
